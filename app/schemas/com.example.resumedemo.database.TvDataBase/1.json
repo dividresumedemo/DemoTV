@@ -1,0 +1,64 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "3b79c487fbd11b25e7eca6555c193b0b",
+    "entities": [
+      {
+        "tableName": "TvData",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`drama_id` INTEGER NOT NULL, `name` TEXT, `total_views` INTEGER NOT NULL, `created_at` TEXT, `thumb` TEXT, `rating` REAL NOT NULL, PRIMARY KEY(`drama_id`))",
+        "fields": [
+          {
+            "fieldPath": "drama_id",
+            "columnName": "drama_id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "total_views",
+            "columnName": "total_views",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "created_at",
+            "columnName": "created_at",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "thumb",
+            "columnName": "thumb",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rating",
+            "columnName": "rating",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "drama_id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3b79c487fbd11b25e7eca6555c193b0b')"
+    ]
+  }
+}
